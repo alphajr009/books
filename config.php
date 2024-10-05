@@ -1,20 +1,15 @@
 <?php
-$host = 'it21354410abcuni.database.windows.net';
-$db = 'abcuni';
-$user = 'azuresql';
-$pass = 'Alpha@0515';
-$charset = 'utf8mb4';
+// SQLSRV Extension Sample Code (optional, remove if not needed)
+$connectionInfo = array("UID" => "azuresql", "pwd" => "Alpha@0515", "Database" => "abcuni", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:it21354410abcuni.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-
+// PDO Connection
 try {
-     $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-     throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    $pdo = new PDO("sqlsrv:server = tcp:it21354410abcuni.database.windows.net,1433; Database = abcuni", "azuresql", "Alpha@0515");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
 }
 ?>
