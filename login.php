@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="container">
-        <h2>Login</h2>
+        <h2>Login 2</h2>
         <?php if (isset($error)): ?>
         <p class="error"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
