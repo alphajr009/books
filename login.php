@@ -25,12 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Login</title>
+    <title>Login 3</title>
 </head>
+
 <body>
     <div class="container">
         <h2>Login</h2>
@@ -45,4 +47,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
     </div>
 </body>
+
 </html>

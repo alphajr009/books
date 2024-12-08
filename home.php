@@ -23,7 +23,7 @@ $books = $stmt->fetchAll();
 
 <body>
     <div class="container">
-        <h1>this is my home</h1>
+        <h1>this is my home 1</h1>
         <h2>Welcome, <?= htmlspecialchars($_SESSION['name']) ?></h2>
         <a href="logout.php" class="logout-btn">Logout</a>
 
